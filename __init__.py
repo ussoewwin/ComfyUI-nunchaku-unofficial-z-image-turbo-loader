@@ -54,6 +54,16 @@ logger.info("=" * 40 + " ComfyUI-nunchaku Initialization " + "=" * 40)
 
 from .utils import get_package_version, get_plugin_version
 
+# Check if _patch_model method exists in NunchakuZImageTransformer2DModel
+try:
+    from nunchaku.models.transformers.transformer_zimage import NunchakuZImageTransformer2DModel
+    if hasattr(NunchakuZImageTransformer2DModel, '_patch_model'):
+        logger.info("NunchakuZImageTransformer2DModel._patch_model method found - patch may not be required")
+    else:
+        logger.warning("NunchakuZImageTransformer2DModel._patch_model method NOT found - patch is required")
+except ImportError as e:
+    logger.warning(f"Could not import NunchakuZImageTransformer2DModel to check _patch_model: {e}")
+
 nunchaku_full_version = get_package_version("nunchaku").split("+")[0].strip()
 
 logger.info(f"Nunchaku version: {nunchaku_full_version}")

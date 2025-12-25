@@ -12,53 +12,13 @@ This is an **unofficial** model loader for **Nunchaku Z Image Turbo**, based on 
 
 - Fixed import error for `NunchakuZImageDiTLoader` node by improving alternative import method with better path resolution (see [Issue #1](issues/1))
 
-## Required Patch
+## Requirements
 
-This node requires a patch to be applied to the Nunchaku package. You must manually apply the patch file before using this node.
+**Nunchaku library**: You **MUST** have the Nunchaku library version from **December 24, 2025** (2025-12-24) installed. This is a hard requirement - other versions will not work.
 
-**Important**: The Nunchaku library must be the version from **December 24, 2025** (2025-12-24). This patch is designed specifically for that version and may not work with other versions.
+**Pre-built package**: For Windows with Python 3.13 and PyTorch 2.9.1+cu130, a pre-built package is available at [ussoewwin/nunchaku-build-on-cu130-windows](https://huggingface.co/ussoewwin/nunchaku-build-on-cu130-windows). This package includes version 1.1.0dev20251224.
 
-**Pre-built package**: For Windows with Python 3.13 and PyTorch 2.9.1+cu130, a pre-built package is available at [ussoewwin/nunchaku-build-on-cu130-windows](https://huggingface.co/ussoewwin/nunchaku-build-on-cu130-windows). This package includes version 1.1.0dev20251224. If you use a different environment, you need to build the Nunchaku library from source. The build instructions are not provided in this repository; please refer to the official Nunchaku repository for build documentation.
-
-### Patch Location
-
-- **Patch file**: `patch/transformer_zimage.py` (in this repository)
-- **Target file**: The path depends on your Python environment:
-  - **ComfyUI Portable version**: `python_embeded/Lib/site-packages/nunchaku/models/transformers/transformer_zimage.py`
-  - **venv/virtualenv**: `venv/Lib/site-packages/nunchaku/models/transformers/transformer_zimage.py` (or equivalent virtual environment path)
-  - **System Python**: The site-packages path in your system Python installation
-  - **Other environments**: Use the appropriate site-packages path for your Python environment
-
-**Note**: The examples below assume a ComfyUI Portable installation. If you are using a different environment (venv, virtualenv, system Python, etc.), adjust the paths accordingly.
-
-### Applying the Patch
-
-The following examples use ComfyUI Portable paths. Adjust the paths if you are using a different environment (venv, virtualenv, system Python, etc.).
-
-1. **Backup the original file**: Before applying the patch, you MUST create a backup of the original file.
-   ```bash
-   # Copy the original file to a backup location (ComfyUI Portable example)
-   copy python_embeded\Lib\site-packages\nunchaku\models\transformers\transformer_zimage.py python_embeded\Lib\site-packages\nunchaku\models\transformers\transformer_zimage.py.backup
-   ```
-
-2. **Apply the patch**: Copy the patch file to replace the original file.
-   ```bash
-   # Copy the patch file to the target location (ComfyUI Portable example)
-   # Replace "patch\transformer_zimage.py" with the actual path to the patch file in this repository
-   copy patch\transformer_zimage.py python_embeded\Lib\site-packages\nunchaku\models\transformers\transformer_zimage.py
-   ```
-
-### Restoring the Original File
-
-If you need to restore the original file (e.g., after uninstalling this node or switching to the official version), use the backup:
-
-```bash
-# Restore from backup (ComfyUI Portable example)
-# Adjust the path if you are using a different environment
-copy python_embeded\Lib\site-packages\nunchaku\models\transformers\transformer_zimage.py.backup python_embeded\Lib\site-packages\nunchaku\models\transformers\transformer_zimage.py
-```
-
-**Important**: Always keep a backup of the original file. Without it, you may not be able to restore the original Nunchaku package functionality.
+**Building from source**: If you use a different environment, you need to build the Nunchaku library from source. The build instructions are not provided in this repository; please refer to the official Nunchaku repository for build documentation.
 
 ## Nodes
 
@@ -115,7 +75,7 @@ The node implements the following loading process:
 
 #### Usage Notes
 
-- **Nunchaku library version**: You must have the Nunchaku library version from **December 24, 2025** (2025-12-24) installed. For Windows with Python 3.13 and PyTorch 2.9.1+cu130, a pre-built package is available at [ussoewwin/nunchaku-build-on-cu130-windows](https://huggingface.co/ussoewwin/nunchaku-build-on-cu130-windows). For other environments, you need to build it from source. Build instructions are not provided in this repository; please refer to the official Nunchaku repository.
+- **Nunchaku library version**: You **MUST** have the Nunchaku library version from **December 24, 2025** (2025-12-24) installed. This is a hard requirement - other versions will not work. For Windows with Python 3.13 and PyTorch 2.9.1+cu130, a pre-built package is available at [ussoewwin/nunchaku-build-on-cu130-windows](https://huggingface.co/ussoewwin/nunchaku-build-on-cu130-windows). For other environments, you need to build it from source. Build instructions are not provided in this repository; please refer to the official Nunchaku repository.
 - Ensure you have the required Nunchaku package installed (version >= 1.0.0)
 - Models must be quantized using SVDQuant and saved with proper metadata
 - The node automatically detects and handles different quantization precisions (INT4, FP4)
