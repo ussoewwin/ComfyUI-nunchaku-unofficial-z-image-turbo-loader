@@ -2,6 +2,8 @@
   <img src="https://huggingface.co/datasets/nunchaku-tech/cdn/resolve/main/logo/v2/nunchaku-compact-transparent.png" alt="logo" width="220"></img>
 </div>
 
+> **⚠️ Warning**: This is an **unofficial** test version of the node. It may not work correctly depending on your environment.
+
 This is an **unofficial** model loader for **Nunchaku Z Image Turbo**, based on [ComfyUI-nunchaku](https://github.com/nunchaku-tech/ComfyUI-nunchaku) with custom additions.
 
 ## Nodes
