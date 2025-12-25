@@ -2,7 +2,17 @@
   <img src="https://huggingface.co/datasets/nunchaku-tech/cdn/resolve/main/logo/v2/nunchaku-compact-transparent.png" alt="logo" width="220"></img>
 </div>
 
-> **⚠️ Warning**: This is an **unofficial** test version of the node. It may not work correctly depending on your environment. This repository may be closed or archived after the official node is released.
+<div align="center">
+
+<h2>⚠️ <span style="font-size: 1.5em; color: #ff6b6b;">WARNING</span></h2>
+
+<p style="font-size: 1.2em; font-weight: bold; color: #d63031;">
+This is an <strong>UNOFFICIAL</strong> test version of the node.<br>
+It may not work correctly depending on your environment.<br>
+This repository may be closed or archived after the official node is released.
+</p>
+
+</div>
 
 This is an **unofficial** model loader for **Nunchaku Z Image Turbo**, based on [ComfyUI-nunchaku](https://github.com/nunchaku-tech/ComfyUI-nunchaku) with custom additions.
 
