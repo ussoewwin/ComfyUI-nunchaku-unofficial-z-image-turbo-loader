@@ -6,6 +6,12 @@
 
 This is an **unofficial** model loader for **Nunchaku Z Image Turbo**, based on [ComfyUI-nunchaku](https://github.com/nunchaku-tech/ComfyUI-nunchaku) with custom additions.
 
+## Changelog
+
+### 2025-12-25
+
+- Fixed import error for `NunchakuZImageDiTLoader` node by improving alternative import method with better path resolution ([Issue #1](https://github.com/ussoewwin/ComfyUI-nunchaku-unofficial-z-image-turbo/issues/1))
+
 ## Required Patch
 
 This node requires a patch to be applied to the Nunchaku package. You must manually apply the patch file before using this node.
