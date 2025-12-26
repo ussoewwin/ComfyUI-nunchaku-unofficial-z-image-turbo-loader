@@ -18,10 +18,10 @@ This is an **unofficial** model loader for **Nunchaku Z Image Turbo**, based on 
 
 ## Changelog
 
-### Version 1.1.0
+### Version 1.1
 
-- Added ControlNet support for Z-Image-Turbo models
-- See [Release Notes v1.1.0](RELEASE_NOTES.md#v110) for details
+- Added Diffsynth ControlNet support for Z-Image-Turbo models
+- See [Release Notes v1.1](RELEASE_NOTES.md#v11) for details
 
 ### 2025-12-25
 
