@@ -18,6 +18,11 @@ This is an **unofficial** model loader for **Nunchaku Z Image Turbo**, based on 
 
 ## Changelog
 
+### Version 1.1.0
+
+- Added ControlNet support for Z-Image-Turbo models
+- See [Release Notes v1.1.0](RELEASE_NOTES.md#v110) for details
+
 ### 2025-12-25
 
 - Fixed import error for `NunchakuZImageDiTLoader` node by improving alternative import method with better path resolution (see [Issue #1](issues/1))
