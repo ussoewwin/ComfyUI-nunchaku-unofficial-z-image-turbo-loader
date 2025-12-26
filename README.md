@@ -36,6 +36,8 @@ This is an **unofficial** model loader for **Nunchaku Z Image Turbo**, based on 
 
 A ComfyUI node for loading Nunchaku-quantized Z-Image-Turbo models. This node provides support for loading 4-bit quantized Z-Image-Turbo models that have been processed using SVDQuant quantization.
 
+<img src="png/node.png" alt="Nunchaku-ussoewwin Z-Image-Turbo DiT Loader Node" width="400">
+
 #### Features
 
 - **Model Loading**: Loads Nunchaku-quantized Z-Image-Turbo diffusion transformer models
@@ -95,8 +97,6 @@ The node implements the following loading process:
 3. Select your model from the dropdown
 4. Configure CPU offload based on your GPU memory
 5. Connect the MODEL output to your sampling nodes
-
-<img src="png/node.png" alt="Nunchaku-ussoewwin Z-Image-Turbo DiT Loader Node" width="400">
 
 ## License
 
