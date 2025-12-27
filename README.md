@@ -22,7 +22,7 @@ This is an **unofficial** model loader for **Nunchaku Z Image Turbo**, based on 
 
 - Added Diffsynth ControlNet support for Z-Image-Turbo models
   - Note: Does not work with standard model patch loader. Requires a custom node developed by the author.
-- See [Release Notes v1.1](RELEASE_NOTES.md#v1-1) for details
+- See [Release Notes v1.1](https://github.com/ussoewwin/ComfyUI-nunchaku-unofficial-z-image-turbo-loader/releases/tag/1.1) for details
 
 ### 2025-12-25
 
