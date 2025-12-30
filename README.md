@@ -18,6 +18,13 @@ This is an **unofficial** model loader for **Nunchaku Z Image Turbo**, based on 
 
 ## Changelog
 
+### Version 2.0
+
+- Added SDXL DIT Loader support
+- Added SDXL LoRA support
+- Added ControlNet support for SDXL models
+- See [Release Notes v2.0](https://github.com/ussoewwin/ComfyUI-nunchaku-unofficial-z-image-turbo-loader/releases/tag/2.0) for details
+
 ### Version 1.1
 
 - Added Diffsynth ControlNet support for Z-Image-Turbo models
