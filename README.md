@@ -98,6 +98,18 @@ The node implements the following loading process:
 4. Configure CPU offload based on your GPU memory
 5. Connect the MODEL output to your sampling nodes
 
+### Nunchaku-ussoewwin SDXL DiT Loader
+
+Important: **Nunchaku / DeepCompressor SDXL SVDQ-FP4 outputs are UNet-only**. They intentionally **do not include CLIP**.
+
+Recommended setup:
+
+- **UNet**: Nunchaku quantized SDXL UNet (`*_svdq_fp4.safetensors`)
+- **CLIP**: standard SDXL fp16/bf16 checkpoint (e.g. `sd_xl_base_1.0.safetensors`)
+- **VAE**: standard SDXL VAE
+
+The node requires selecting a separate **CLIP checkpoint** because CLIP is not part of the quantized UNet file.
+
 ## License
 
 Licensed under the Apache License, Version 2.0. See [LICENCE.txt](LICENCE.txt) for details.

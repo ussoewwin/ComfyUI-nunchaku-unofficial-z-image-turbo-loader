@@ -10,6 +10,7 @@ import comfy.conds
 import comfy.model_management
 import comfy.utils
 from comfy.model_base import ModelType, Lumina2
+import inspect
 
 from nunchaku.models.transformers.transformer_zimage import NunchakuZImageTransformer2DModel
 
@@ -133,7 +134,20 @@ class NunchakuZImage(Lumina2):
         # return_dict=False returns tuple (x,) where x is List[torch.Tensor]
         # Each tensor in the list has shape (C, F, H, W) - velocity prediction
         # Pass normalized timestep (the model will scale by t_scale internally)
-        model_output = self.diffusion_model(xc_list, t_zimage, cap_feats=cap_feats, **zimage_kwargs)
+        # Also forward transformer_options/control if the model forward supports them (for ModelPatcher ControlNet)
+        forward_kwargs = dict(zimage_kwargs)
+        try:
+            sig = inspect.signature(self.diffusion_model.forward)
+            params = set(sig.parameters.keys())
+            if "transformer_options" in params:
+                forward_kwargs["transformer_options"] = transformer_options
+            if "control" in params:
+                forward_kwargs["control"] = control
+        except Exception:
+            # If signature introspection fails, keep compatibility by not passing extra kwargs.
+            pass
+
+        model_output = self.diffusion_model(xc_list, t_zimage, cap_feats=cap_feats, **forward_kwargs)
 
         # Extract list from tuple: (x,) -> x
         if isinstance(model_output, tuple):
