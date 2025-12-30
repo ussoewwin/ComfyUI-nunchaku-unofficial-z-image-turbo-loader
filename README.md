@@ -46,6 +46,8 @@ These are Nunchaku unofficial loaders, based on ComfyUI-nunchaku with custom add
 
 ### Nunchaku-ussoewwin Z-Image-Turbo DiT Loader
 
+⚠️ **WARNING**: This is an **unofficial experimental loader** created as a prototype before the release of ComfyUI-Nunchaku 1.1.0. This is the author's personal testing environment. **Do not use this node.**
+
 A ComfyUI node for loading Nunchaku-quantized Z-Image-Turbo models. This node provides support for loading 4-bit quantized Z-Image-Turbo models that have been processed using SVDQuant quantization.
 
 <img src="png/node.png" alt="Nunchaku-ussoewwin Z-Image-Turbo DiT Loader Node" width="400">
