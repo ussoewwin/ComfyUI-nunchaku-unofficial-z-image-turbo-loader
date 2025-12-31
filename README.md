@@ -80,6 +80,11 @@ Recommended setup:
 
 The node requires selecting a separate **CLIP checkpoint** because CLIP is not part of the quantized UNet file.
 
+#### Available Quantized Models
+
+Pre-quantized SDXL models are available at:
+- **[Nunchaku-R128-SDXL-Series](https://huggingface.co/ussoewwin/Nunchaku-R128-SDXL-Series)** - A collection of high-fidelity quantized SDXL models optimized using Nunchaku (SVDQ W4A4) engine with Rank 128 (r128) quantization.
+
 ### Nunchaku-ussoewwin SDXL LoRA Loader
 
 <img src="png/sdxllora.png" alt="Nunchaku-ussoewwin SDXL LoRA Loader Node" width="400">
