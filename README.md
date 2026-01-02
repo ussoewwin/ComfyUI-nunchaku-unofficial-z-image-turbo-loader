@@ -19,7 +19,7 @@ These are Nunchaku unofficial loaders, based on ComfyUI-nunchaku with custom add
 
 ### Version 2.2
 
-- Added First Block Cache feature for Nunchaku models
+- Added First Block Cache feature for Nunchaku SDXL models
 - See [Release Notes v2.2](https://github.com/ussoewwin/ComfyUI-nunchaku-unofficial-z-image-turbo-loader/releases/tag/2.2) for details
 
 ### Version 2.1
@@ -107,7 +107,7 @@ A ComfyUI node for loading and applying LoRA (Low-Rank Adaptation) to Nunchaku q
 
 <img src="png/afbc.png" alt="Nunchaku-ussoewwin Apply First Block Cache Patch Advanced Node" width="400">
 
-A ComfyUI node that implements the First Block Cache feature for Nunchaku models (SDXL/Z-Image). This node caches the output of the first Transformer block and skips recalculation when similar, achieving significant speedup during sampling.
+A ComfyUI node that implements the First Block Cache feature for Nunchaku SDXL models. This node caches the output of the first Transformer block and skips recalculation when similar, achieving significant speedup during sampling.
 
 #### Features
 
@@ -123,9 +123,8 @@ A ComfyUI node that implements the First Block Cache feature for Nunchaku models
 - **Residual Diff Threshold**: 
   - `0.0`: Cache disabled (always calculates)
   - `0.12` (SDXL): Approximately 1.8x speedup
-  - `0.1` (Z-Image): Approximately 1.6x speedup
 - **Sampler Compatibility**: Works best with Euler-family samplers. Multi-stage samplers (HeunPP2, Heun++, etc.) automatically disable cache to prevent image corruption
-- **Model Support**: Compatible with both Nunchaku SDXL (UNet-based) and Z-Image (DiT-based) models
+- **Model Support**: Compatible with Nunchaku SDXL (UNet-based) models
 
 ## License
 
