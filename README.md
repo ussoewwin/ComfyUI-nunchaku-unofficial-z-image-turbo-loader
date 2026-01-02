@@ -17,10 +17,19 @@ These are Nunchaku unofficial loaders, based on ComfyUI-nunchaku with custom add
 
 ## Changelog
 
+### Version 2.3
+
+- Added Nunchaku Ultimate SD Upscale nodes with improved color normalization
+- Improved First Block Cache with residual injection for better quality
+- Fixed USDU color normalization for Nunchaku SDXL VAE output
+- Fixed module reference separation to prevent data loss
+- Optimized cache similarity calculation using fused kernels
+- See [Release Notes v2.3](https://github.com/ussoewwin/ComfyUI-nunchaku-unofficial-loader/releases/tag/2.3) for details
+
 ### Version 2.2
 
 - Added First Block Cache feature for Nunchaku SDXL models
-- See [Release Notes v2.2](https://github.com/ussoewwin/ComfyUI-nunchaku-unofficial-z-image-turbo-loader/releases/tag/2.2) for details
+- See [Release Notes v2.2](https://github.com/ussoewwin/ComfyUI-nunchaku-unofficial-loader/releases/tag/2.2) for details
 
 ### Version 2.1
 
@@ -125,6 +134,43 @@ A ComfyUI node that implements the First Block Cache feature for Nunchaku SDXL m
   - `0.12` (SDXL): Approximately 1.8x speedup
 - **Sampler Compatibility**: Works best with Euler-family samplers. Multi-stage samplers (HeunPP2, Heun++, etc.) automatically disable cache to prevent image corruption
 - **Model Support**: Compatible with Nunchaku SDXL (UNet-based) models
+
+### Nunchaku Ultimate SD Upscale
+
+A ComfyUI node for upscaling images using tile-based image-to-image processing, specifically optimized for Nunchaku SDXL models.
+
+#### Features
+
+- **Tile-based Upscaling**: Processes images in tiles to handle high-resolution upscaling efficiently
+- **Color Normalization**: Automatically normalizes Nunchaku SDXL VAE output to proper color range before upscaling
+- **Multiple Modes**: Supports Linear, Chess, and None tile modes
+- **Seam Fixing**: Includes multiple seam fixing modes (None, Band Pass, Half Tile, Half Tile + Intersections)
+- **Module Isolation**: Prevents module reference conflicts with other custom nodes
+
+#### Usage Notes
+
+- **Requires ComfyUI_UltimateSDUpscale**: This node requires the `ComfyUI_UltimateSDUpscale` custom node to be installed
+- **Color Range**: Automatically handles Nunchaku SDXL VAE's compressed color range (0.15-0.85) by normalizing to full range (0.0-1.0)
+- **Module Safety**: Uses isolated module loading to prevent conflicts with other custom nodes
+
+### Nunchaku Ultimate SD Upscale (No Upscale)
+
+A variant of the Ultimate SD Upscale node that performs tile-based image-to-image processing without initial upscaling.
+
+#### Features
+
+- **Tile Processing**: Processes images in tiles without initial upscaling
+- **Same Optimizations**: Includes all color normalization and module isolation features of the standard USDU node
+
+### Nunchaku Ultimate SD Upscale (Custom Sample)
+
+A variant of the Ultimate SD Upscale node that supports custom sampler and sigmas for advanced control.
+
+#### Features
+
+- **Custom Sampler Support**: Allows specifying custom sampler functions
+- **Custom Sigmas**: Supports custom sigma schedules for fine-tuned control
+- **Same Optimizations**: Includes all color normalization and module isolation features of the standard USDU node
 
 ## License
 
