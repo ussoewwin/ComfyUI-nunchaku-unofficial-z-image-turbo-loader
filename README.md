@@ -142,7 +142,7 @@ A ComfyUI node for upscaling images using tile-based image-to-image processing, 
 #### Features
 
 - **Tile-based Upscaling**: Processes images in tiles to handle high-resolution upscaling efficiently
-- **Color Normalization**: Automatically normalizes Nunchaku SDXL VAE output to proper color range before upscaling
+- **Color Normalization**: Always normalizes Nunchaku SDXL VAE output to full dynamic range (0.0-1.0) before upscaling, fixing pale/washed-out colors
 - **Multiple Modes**: Supports Linear, Chess, and None tile modes
 - **Seam Fixing**: Includes multiple seam fixing modes (None, Band Pass, Half Tile, Half Tile + Intersections)
 - **Module Isolation**: Prevents module reference conflicts with other custom nodes
@@ -150,7 +150,7 @@ A ComfyUI node for upscaling images using tile-based image-to-image processing, 
 #### Usage Notes
 
 - **Requires ComfyUI_UltimateSDUpscale**: This node requires the `ComfyUI_UltimateSDUpscale` custom node to be installed
-- **Color Range**: Automatically handles Nunchaku SDXL VAE's compressed color range (0.15-0.85) by normalizing to full range (0.0-1.0)
+- **Color Range**: Automatically normalizes Nunchaku SDXL VAE's compressed color range (e.g., 0.15-0.85) to full range (0.0-1.0) to restore proper contrast and color saturation
 - **Module Safety**: Uses isolated module loading to prevent conflicts with other custom nodes
 
 ## License
