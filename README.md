@@ -24,6 +24,7 @@ These are Nunchaku unofficial loaders, based on ComfyUI-nunchaku with custom add
 - Fixed USDU color normalization for Nunchaku SDXL VAE output
 - Fixed module reference separation to prevent data loss
 - Optimized cache similarity calculation using fused kernels
+- Added Flash Attention 2 support for SDXL DiT Loader (optional, enabled by default)
 - See [Release Notes v2.3](https://github.com/ussoewwin/ComfyUI-nunchaku-unofficial-loader/releases/tag/2.3) for details
 
 ### Version 2.2
@@ -93,6 +94,14 @@ Recommended setup:
 - **VAE**: standard SDXL VAE
 
 The node requires selecting a separate **CLIP checkpoint** because CLIP is not part of the quantized UNet file.
+
+#### Features
+
+- **Flash Attention 2 Support**: Optional Flash Attention 2 acceleration for faster inference (enabled by default)
+  - Automatically applies FA2 to all attention layers in the UNet model
+  - Requires Flash Attention 2 to be installed in your environment
+  - Can be disabled via the `enable_fa2` parameter if needed
+  - Typically enables FA2 for 140 attention layers in SDXL models
 
 #### Available Quantized Models
 
